@@ -1,54 +1,56 @@
 <div mat-dialog-title>
   <h1>Cadastro de livro</h1>
 </div>
-<div mat-dialog-content class="content">
-  <div class="row">
-    <mat-form-field appearance="fill">
-      <mat-label>Título</mat-label>
-      <input matInput type="text" placeholder="Ex: Harry Potter">
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>Edição</mat-label>
-      <input type="number" matInput placeholder="Ex: 1">
-    </mat-form-field>
-  </div>
+<form [formGroup]="bookForm" (ngSubmit)="onFormSubmit()">
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <mat-form-field appearance="fill">
+        <mat-label>Título</mat-label>
+        <input matInput type="text" placeholder="Ex: Harry Potter" formControlName="titulo">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Edição</mat-label>
+        <input type="number" matInput placeholder="Ex: 1" formControlName="edicao">
+      </mat-form-field>
+    </div>
 
-  <div class="row">
-    <mat-form-field appearance="fill">
-      <mat-label>Autor</mat-label>
-      <input matInput type="text" placeholder="Ex: JK. Rowling">
-    </mat-form-field>
+    <div class="row">
+      <mat-form-field appearance="fill">
+        <mat-label>Autor</mat-label>
+        <input matInput type="text" placeholder="Ex: JK. Rowling" formControlName="autor">
+      </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Data de publicação:</mat-label>
-      <input matInput [matDatepicker]="picker">
-      <mat-hint>MM/DD/YYYY</mat-hint>
-      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-  </div>
+      <mat-form-field appearance="fill" >
+        <mat-label>Data de publicação:</mat-label>
+        <input matInput [matDatepicker]="dp" date formControlName="dataPublicacao" type="date ">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
+        <mat-datepicker #dp></mat-datepicker>
+      </mat-form-field>
+    </div>
 
-  <div class="row">
-    <mat-radio-group aria-label="Select an option">
-      <mat-label>Já leu?</mat-label>
-      <mat-radio-button value="lido">Sim</mat-radio-button>
-      <mat-radio-button value="nao-lido">Não</mat-radio-button>
-      <mat-radio-button value="lendo">Lendo</mat-radio-button>
-    </mat-radio-group>
-  </div>
+    <div class="row">
+      <mat-radio-group aria-label="Select an option" formControlName="lido">
+        <mat-label>Já leu?</mat-label>
+        <mat-radio-button value="lido">Sim</mat-radio-button>
+        <mat-radio-button value="nao-lido">Não</mat-radio-button>
+        <mat-radio-button value="lendo">Lendo</mat-radio-button>
+      </mat-radio-group>
+    </div>
 
-  <div class="row">
-    <mat-form-field>
-      <mat-label>Categoria do livro</mat-label>
-      <mat-select>
-        <mat-option *ngFor="let categoria of categorias" [value]="categoria">
-          {{categoria}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Categoria do livro</mat-label>
+        <mat-select  formControlName="categoria">
+          <mat-option *ngFor="let categoria of categorias" [value]="categoria">
+            {{categoria}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
   </div>
-</div>
-<div mat-dialog-actions>
-  <button mat-raised-button>Cancel</button>
-  <button mat-raised-button color="primary">Save</button>
-</div>
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+    <button mat-raised-button color="primary" type="submit">{{data ? 'Update': 'Save'}}</button>
+  </div>
+</form>
