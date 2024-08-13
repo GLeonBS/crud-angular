@@ -26,12 +26,12 @@ Este projeto é um CRUD (Create, Read, Update, Delete) desenvolvido em Angular, 
 
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   git clone https://github.com/seu-usuario/crud-angular.git
    ```
 
 2. Navegue até o diretório do projeto:
    ```bash
-   cd nome-do-repositorio
+   cd crud-angular
    ```
 
 3. Instale as dependências do projeto:
