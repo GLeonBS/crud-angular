@@ -1,27 +1,59 @@
-# CrudApp
+# Projeto CRUD em Angular com JSON Server
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+## Descrição
 
-## Development server
+Este projeto é um CRUD (Create, Read, Update, Delete) desenvolvido em Angular, utilizando o JSON Server como backend para simulação de uma API RESTful. O CRUD permite realizar operações básicas de gerenciamento de dados, como adicionar, visualizar, editar e excluir registros.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Funcionalidades
 
-## Code scaffolding
+- **Listagem**: Visualize todos os registros existentes.
+- **Criação**: Adicione novos registros ao sistema.
+- **Edição**: Altere os dados de registros existentes.
+- **Exclusão**: Remova registros do sistema.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tecnologias Utilizadas
 
-## Build
+- **Angular**: Framework utilizado para o desenvolvimento da interface do usuário.
+- **JSON Server**: Ferramenta utilizada para simular uma API RESTful e armazenar os dados do CRUD.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Requisitos
 
-## Running unit tests
+- **Node.js** (versão 18 ou superior)
+- **npm** (gerenciador de pacotes do Node.js)
+- **Angular CLI** (versão 16 ou superior)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Instalação
 
-## Running end-to-end tests
+1. Clone este repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+2. Navegue até o diretório do projeto:
+   ```bash
+   cd nome-do-repositorio
+   ```
 
-## Further help
+3. Instale as dependências do projeto:
+   ```bash
+   npm install
+   ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Executando o Projeto
+
+1. Em um terminal, dentro da pasta do projeto, inicie o JSON Server:
+   ```bash
+   npx json-server db.json
+   ```
+   O servidor será iniciado em [http://localhost:3000](http://localhost:3000).
+
+2. Em outro terminal, também na pasta do projeto, inicie o servidor de desenvolvimento do Angular:
+   ```bash
+   npm run start
+   ```
+   O servidor do Angular estará disponível em [http://localhost:4200](http://localhost:4200).
+
+## Estrutura do Projeto
+
+- **src/app**: Contém os componentes, serviços e demais arquivos do Angular.
+- **db.json**: Arquivo JSON utilizado pelo JSON Server para armazenar os dados do CRUD.

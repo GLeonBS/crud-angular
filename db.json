@@ -18,18 +18,18 @@
   },
   "livros": [
     {
-      "titulo": "testessss",
+      "titulo": "Livro 1",
       "edicao": 12,
-      "autor": "test",
+      "autor": "Leon",
       "dataPublicacao": "2023-08-23T03:00:00.000Z",
       "lido": "lido",
       "categoria": "Ficção Científica",
       "id": 2
     },
     {
-      "titulo": "tee",
+      "titulo": "Livro 2",
       "edicao": 31,
-      "autor": "sdada",
+      "autor": "Gabriel",
       "dataPublicacao": "2023-08-28T03:00:00.000Z",
       "lido": "lido",
       "categoria": "Didático",
